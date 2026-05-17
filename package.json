@@ -1,0 +1,21 @@
+{
+  "name": "skyflixer-admin-bot",
+  "version": "1.0.0",
+  "description": "A fully automated Telegram group admin bot for the SkyFlixer community",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "node server.js",
+    "bot": "node bot.js"
+  },
+  "dependencies": {
+    "telegraf": "^4.16.3",
+    "better-sqlite3": "^11.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "node-cron": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
