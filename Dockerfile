@@ -12,6 +12,7 @@ COPY --chown=node:node ./package.json package.json
 RUN npm install --production
 
 COPY --chown=node:node . /app
+RUN chown -R node:node /app
 
 USER node
 
