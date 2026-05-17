@@ -6,15 +6,15 @@ ENV BOT_TOKEN=""
 ENV ADMIN_ID=""
 ENV ADMIN_USERNAME=""
 
-RUN useradd -m -u 1000 user
-USER user
-ENV PATH="/home/user/.local/bin:$PATH"
+RUN chown -R node:node /app
+USER node
+ENV PATH="/home/node/.local/bin:$PATH"
 
 WORKDIR /app
 
-COPY --chown=user ./package.json package.json
+COPY --chown=node:node ./package.json package.json
 RUN npm install --production
 
-COPY --chown=user . /app
+COPY --chown=node:node . /app
 
 CMD ["node", "server.js"]
